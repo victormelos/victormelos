@@ -2,11 +2,14 @@ name: Generate snake animation
 
 on:
   schedule:
-    - cron: "0 0 * * *"
-  workflow_dispatch:
+    - cron: "0 0 * * *"      # todo dia à meia-noite (UTC)
+  workflow_dispatch:          # rodar manualmente
   push:
     branches:
       - main
+
+permissions:
+  contents: write             # <<< importante pro git push
 
 jobs:
   build:
